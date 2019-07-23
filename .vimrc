@@ -1,12 +1,12 @@
-execute pathogen#infect()
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"execute pathogen#infect()
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Enables highlight syntax
 syntax enable
 set nofoldenable
  
 " Sweet colorscheme
-colorscheme hybrid
+" colorscheme hybrid
 set background=dark
  
 " Set utf8 as standard encoding and en_US as the standard language
@@ -26,6 +26,9 @@ set visualbell
  
 " Do not scroll sideways unless we reach the end of the screen
 set sidescrolloff=0
+
+" Keep 3 lines below and above the cursor
+set scrolloff=5
  
 " highlight the status bar when in insert mode
 if version >= 700
@@ -50,8 +53,8 @@ filetype plugin on
  
 " Pathogen load
 "filetype off " Makes syntax non-working on office box
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
  
 " Switch between files in buffer
 nnoremap <C-Tab> :bn<CR>
@@ -68,12 +71,12 @@ set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-"set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftwidth=4  " number of spaces to use for autoindenting
 "set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set incsearch     " show search matches as you type
 "set expandtab
-"set shiftwidth=4
-"set softtabstop=4
+set shiftwidth=4
+set softtabstop=4
  
 " Always set the current file directory as the local current directory
 autocmd BufEnter * silent! lcd %:p:h
@@ -105,6 +108,14 @@ set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
+
+" Powerline
+set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
+set laststatus=2
+set showtabline=2
+set noshowmode
+set t_Co=256
+
  
 " YouCompleteMe
 "let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
