@@ -1,0 +1,5 @@
+(set-frame-font "Consolas 13")
+(load-theme 'tsdh-light)
+(setq initial-frame-alist '((top . 50) (left . 100) (width . 145) (height . 50)))
+(tool-bar-mode -1)
+(display-time-mode 1)
